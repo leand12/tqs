@@ -1,0 +1,3 @@
+### 2b/ Consider that we want to verify the AddressResolver#findAddressForLocation, which invokes a remote geocoding service, available in a REST interface, passing the site coordinates. Which is the service to mock?
+
+The AddressResolver is dependant of the interface ISimpleHttpClient, through which it comunicates with the REST API. Thus, as we ca predict the behaviour of that service, we should mock this interface to represent the REST API on its place.

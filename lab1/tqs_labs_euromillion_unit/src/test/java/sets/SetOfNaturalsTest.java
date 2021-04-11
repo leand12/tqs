@@ -77,11 +77,6 @@ public class SetOfNaturalsTest {
     }
 
     @Test
-    public void testEqualsSameSet() {
-        assertTrue(setD.equals(setD));
-    }
-
-    @Test
     public void testContain() {
         assertFalse(setB.contains(0), "no existent element but was reported as existing");
         assertTrue(setB.contains(10), "existent element but wasn't reported as existing");
