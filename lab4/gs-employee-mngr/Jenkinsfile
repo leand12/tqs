@@ -14,7 +14,12 @@ pipeline {
             steps {
                 sh 'mvn -version'                      
             }       
-        }  
+        }
+        steps {           
+        	dir('your-sub-directory'){             
+        		sh "cd ./lab4/gs-employee-mngr"           
+        	}       
+        }
         stage('Install') {
         	steps {  
         		sh "mvn clean install"
