@@ -15,13 +15,11 @@ pipeline {
                 sh 'mvn -version'                      
             }       
         }
-        steps {           
-        	dir('your-sub-directory'){             
-        		sh "cd ./lab4/gs-employee-mngr"           
-        	}       
-        }
         stage('Install') {
         	steps {  
+                dir('./lab4/gs-employee-mngr'){             
+                    sh "pwd"           
+                } 
         		sh "mvn clean install"
         	}           
         	post {               
