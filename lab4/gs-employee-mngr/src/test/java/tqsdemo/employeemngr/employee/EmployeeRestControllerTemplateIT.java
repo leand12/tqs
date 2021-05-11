@@ -52,15 +52,6 @@ public class EmployeeRestControllerTemplateIT {
     }
 
     @Test
-    public void failTest() {
-        Employee bob = new Employee("bob", "bob@deti.com");
-        ResponseEntity<Employee> entity = restTemplate.postForEntity("/api/employees", bob, Employee.class);
-
-        List<Employee> found = repository.findAll();
-        assertThat(found).extracting(Employee::getName).containsOnly("alice");
-    }
-
-    @Test
     public void givenEmployees_whenGetEmployees_thenStatus200()  {
         createTestEmployee("bob", "bob@deti.com");
         createTestEmployee("alex", "alex@deti.com");
