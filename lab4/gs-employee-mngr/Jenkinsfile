@@ -14,7 +14,17 @@ pipeline {
             steps {
                 sh 'mvn -version'                      
             }       
-        }   
+        }  
+        stage('Install') {
+        	steps {  
+        		sh "mvn clean install"
+        	}           
+        	post {               
+        		always {                   
+        			junit '**/target/*-reports/TEST-*.xml'              
+        		}           
+        	}       
+        }  
     } 
 }
 
